@@ -1,0 +1,23 @@
+.navbar{
+    background-color: var(--surface);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper{
+    width: 1400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 200px;
+    cursor: pointer;
+}
+.user{
+    cursor: pointer;
+    position: relative;
+}

@@ -1,0 +1,15 @@
+.hamburger{
+    position: absolute;
+    
+    z-index: 999;
+    width: 100px;
+    height: 100px;
+    background-color: var(--surface);
+    border: 1px solid var(--accent);
+    right: 0;
+
+}
+
+.hamburgerButton{
+    color: white;
+}
