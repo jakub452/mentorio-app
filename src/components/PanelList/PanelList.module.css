@@ -1,0 +1,43 @@
+.icon{
+    width: 70px;
+}
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    height: 80px;
+    padding: 10px;
+}
+.card:nth-of-type(odd){
+    background-color: var(--surface);
+}
+.left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.name{
+    font-size: var(--fs-l);
+    font-weight: bold;
+    color: var(--text);
+}
+.major{
+    font-size: var(--fs-m);
+    color: var(--text-muted);
+}
+.right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+    line-height: 1;
+}
+.price{
+    font-size: var(--fs-l);
+}
+.price svg{
+    display: block;
+    flex: none;
+}
