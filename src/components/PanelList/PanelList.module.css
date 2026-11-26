@@ -1,43 +1,70 @@
-.icon{
+.icon {
     width: 70px;
 }
-.card{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    height: 80px;
-    padding: 10px;
-}
-.card:nth-of-type(odd){
+
+
+.card:nth-of-type(odd) {
     background-color: var(--surface);
 }
-.left{
+
+.left {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
 }
-.name{
+
+.name {
     font-size: var(--fs-l);
     font-weight: bold;
     color: var(--text);
 }
-.major{
+
+.major {
     font-size: var(--fs-m);
     color: var(--text-muted);
 }
-.right{
+
+.right {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100px;
     line-height: 1;
 }
-.price{
+.info{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+}
+.price {
     font-size: var(--fs-l);
 }
-.price svg{
+
+.price svg {
     display: block;
     flex: none;
+}
+
+.button {
+    background: none;
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    height: 80px;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+.button:hover{
+    outline: 1px solid var(--border);
+}
+.active{
+    outline: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    background-color: var(--surface);
 }

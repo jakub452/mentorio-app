@@ -20,3 +20,22 @@
     overflow-y: scroll;
     overflow: auto;
 }
+
+.filter{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 10px;
+    gap: 15px;
+
+    height: 50px;
+    font-size: var(--fs-l);
+}
+.filterInput{
+    background-color: var(--surface);
+    height: 40px;
+    width: 150px;
+    border: 1px solid var(--border);
+
+    font-size: var(--fs-l);
+}
