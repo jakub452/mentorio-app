@@ -24,8 +24,8 @@ Mentorio lets students connect with tutors. Browse tutors, check their free slot
 Requirements: Node.js 20+
 
 ```bash
-git clone https://github.com/jakub452/mentorio.git
-cd mentorio
+git clone https://github.com/jakub452/mentorio-app.git
+cd mentorio-app
 npm install
 npm run dev
 ```
@@ -56,14 +56,14 @@ The app runs at `http://localhost:5173`. No API key or `.env` file is needed: al
 
 ```
 src/
-├── data/fakeApi.js           # mock tutor data
+├── data/fakeApi.js
 ├── components/
-│   ├── PanelList/            # one tutor in the list
-│   └── DetailsPanel/         # selected tutor's details
+│   ├── PanelList/
+│   └── DetailsPanel/
 ├── pages/
-│   └── Main.jsx              # list, filter and details side by side
-├── theme.css                 # colors, font sizes, light/dark theme
-└── assets/                   # logo, icons
+│   └── Main.jsx
+│
+└── assets/
 ```
 
 ## Roadmap
