@@ -15,7 +15,7 @@ const Main = () => {
   const options = [...new Set(list.map(t => t.major))].sort()
   // ['Chemia', 'Fizyka', 'Informatyka', 'Matematyka']
 
-  const filteredList = filter === "Wszystko" ? list : list.filter(i => i.options === filter)  
+  const filteredList = filter === "Wszystko" ? list : list.filter(i => i.major === filter)  
   const tutor = filteredList.find(t => t.id === selected) ?? filteredList.at(0)
 
   return (

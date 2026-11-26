@@ -7,7 +7,7 @@ const DetailsPanel = ({ tutor, onClick }) => {
         <div className={styles.info}>
             <div className={styles.top}>
                 <div className={styles.left}>
-                    <img className={styles.icon} src={tutor.image} alt={`${tutor.name}'s image`} />
+                    <img className={styles.icon} src={tutor?.image} alt={`${tutor.name}'s image`} />
                     <div className={styles.infoText}>
                         <p className={styles.name}>{tutor.name}</p>
                         <p className={styles.major}>{`${tutor.major} - ${tutor.year} rok`}</p>

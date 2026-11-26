@@ -5,23 +5,26 @@ const TutorRequest = ({ requestVisible, setRequestVisible }) => {
     const ref = useRef(null)
     useEffect(() => {
         const handleClick = e => {
-            if (e.target != ref.current) {
-                console.log(e)
+            if (ref.current && !ref.current.contains(e.target)) {
                 setRequestVisible(false)
             }
-    }
+        }
         const handleKey = e => {
             if (e.key === 'Escape') {
                 setRequestVisible(false)
             }
         }
         document.addEventListener('keydown', handleKey)
-        document.addEventListener('mousedown', handleClick)
+        document.addEventListener('mouseup', handleClick)
     }, [])
 
     if (!requestVisible) return
     return (
-        <div ref={ref} className={styles.request}>TutorRequest</div>
+        <div className={styles.request}>
+            <div ref={ref} className={styles.requestCard}>
+                Form
+            </div>
+        </div>
     )
 }
 

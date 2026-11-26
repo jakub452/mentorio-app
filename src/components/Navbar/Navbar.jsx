@@ -7,14 +7,14 @@ import Hamburger from '../Hamburger/Hamburger'
 
 const Navbar = ({ pages }) => {
     const navigate = useNavigate()
-    const [hidden, setHidden] = useState(true)
+    const [isVisible, setIsVisible] = useState(false)
     return (
         <div className={styles.navbar}>
             <div className={styles.wrapper}>
                 <img src={logo} alt="webside logo" className={styles.logo} onClick={() => {navigate("/")}}/>
                 <div className={styles.user}>
-                    <User size={40} onClick={() => setHidden(!hidden)}/>
-                    <Hamburger pages={pages} hidden={hidden}/>
+                    <User className={styles.icon} size={40} onClick={() => setIsVisible(true)}/>
+                    <Hamburger pages={pages} isVisible={isVisible} setIsVisible={setIsVisible}/>
                 </div>
             </div>
         </div>

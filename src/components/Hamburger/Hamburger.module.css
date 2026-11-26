@@ -7,9 +7,9 @@
     background-color: var(--surface);
     border: 1px solid var(--accent);
     right: 0;
-
 }
 
 .hamburgerButton{
     color: white;
+    cursor: pointer;
 }
