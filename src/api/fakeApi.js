@@ -1,5 +1,4 @@
 import testIcon from '../assets/logo/mentorio-znak.svg'
-
 export const fakeApi = [
     {
         id: 1,
@@ -8,6 +7,7 @@ export const fakeApi = [
         major: "Informatyka",
         year: 3,
         price: 40,
+        description: "Tłumaczę granice, pochodne i całki na przykładach z kolokwiów. Pomagam też z podstawami programowania w C i Pythonie.",
     },
     {
         id: 2,

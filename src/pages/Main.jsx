@@ -1,21 +1,26 @@
 import { useState } from 'react'
 import PanelList from '../components/PanelList/PanelList'
-import { fakeApi } from '../data/fakeApi'
+import { fakeApi as list } from '../api/fakeApi'
 import styles from './Main.module.css'
 import DetailsPanel from '../components/DetailsPanel/DetailsPanel'
+import TutorRequest from '../components/TutorRequest/TutorRequest'
 
 const Main = () => {
 
   const [filter, setFilter] = useState("Wszystko");
-  const [selected, setSelected] = useState(null)
+  const [selected, setSelected] = useState()
   
-  const majors = [...new Set(fakeApi.map(t => t.major))].sort()
-  const filteredFakeApi = filter === "Wszystko" ? fakeApi : fakeApi.filter(t => t.major === filter)
+  const [requestVisible, setRequestVisible] = useState(false)
 
-  const tutor = filteredFakeApi.find(t => t.id === selected) ?? filteredFakeApi.at(0)
+  const options = [...new Set(list.map(t => t.major))].sort()
+  // ['Chemia', 'Fizyka', 'Informatyka', 'Matematyka']
+
+  const filteredList = filter === "Wszystko" ? list : list.filter(i => i.options === filter)  
+  const tutor = filteredList.find(t => t.id === selected) ?? filteredList.at(0)
 
   return (
     <div className={styles.main}>
+      <TutorRequest requestVisible={requestVisible} setRequestVisible={setRequestVisible}/>
       <div className={styles.wrapper}>
         <div className={styles.panel}>
           <div className={styles.filter}>
@@ -23,20 +28,20 @@ const Main = () => {
             <select className={styles.filterInput} name="filter" id="filter" value={filter} onChange={e => setFilter(e.target.value)}>
               <option value="Wszystko">Wszystkie</option>
               {
-                majors.map(m => (
+                options.map(m => (
                   <option key={m} value={m}>{m}</option>
                 ))
               }
             </select>
           </div>
           {
-            filteredFakeApi.map(t => (
+            filteredList.map(t => (
               <PanelList key={t.id} tutor={t} onSelect={() => setSelected(t.id)} isActive={t.id === tutor.id}/>
             ))
           }
         </div>
         <div className={styles.panel}>
-          <DetailsPanel tutor={tutor}/>
+          <DetailsPanel tutor={tutor} onClick={() => setRequestVisible(!requestVisible)}/>
         </div>
       </div>
     </div>
