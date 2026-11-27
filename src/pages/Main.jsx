@@ -3,14 +3,12 @@ import PanelList from '../components/PanelList/PanelList'
 import { fakeApi as list } from '../api/fakeApi'
 import styles from './Main.module.css'
 import DetailsPanel from '../components/DetailsPanel/DetailsPanel'
-import TutorRequest from '../components/TutorRequest/TutorRequest'
+
 
 const Main = () => {
 
   const [filter, setFilter] = useState("Wszystko");
   const [selected, setSelected] = useState()
-  
-  const [requestVisible, setRequestVisible] = useState(false)
 
   const options = [...new Set(list.map(t => t.major))].sort()
   // ['Chemia', 'Fizyka', 'Informatyka', 'Matematyka']
@@ -20,7 +18,7 @@ const Main = () => {
 
   return (
     <div className={styles.main}>
-      <TutorRequest requestVisible={requestVisible} setRequestVisible={setRequestVisible}/>
+
       <div className={styles.wrapper}>
         <div className={styles.panel}>
           <div className={styles.filter}>
@@ -41,7 +39,7 @@ const Main = () => {
           }
         </div>
         <div className={styles.panel}>
-          <DetailsPanel tutor={tutor} onClick={() => setRequestVisible(!requestVisible)}/>
+          <DetailsPanel tutor={tutor}/>
         </div>
       </div>
     </div>

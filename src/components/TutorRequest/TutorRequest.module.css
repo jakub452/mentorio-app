@@ -10,11 +10,142 @@
     align-items: center;
     justify-content: center;
 }
-
+.title{
+    font-size: var(--fs-xl);
+    padding: 15px;
+    font-weight: bold;
+}
+.subTitle{
+    font-size: var(--fs-s);
+    margin-top: -15px;
+    color: var(--text-muted);
+}
 .requestCard{
     width: 800px;
     position: absolute;
     height: 800px;
     background-color: var(--bg);
     border: 2px solid var(--border);
+}
+
+.icon{
+    width: 50px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.formInfo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+}
+
+.left{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: var(--fs-l);
+}
+.name{
+    font-size: var(--fs-l);
+    font-weight: bold;
+}
+.right{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+.majorTitle{
+    font-size: var(--fs-l);
+    font-weight: bold;
+}
+.major{
+    font-size: var(--fs-l);
+}
+.calendarTitle{
+    font-size: var(--fs-xl);
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.inputs{
+    width: 95%;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+.time label{
+    font-size: var(--fs-l);
+    margin-right: 10px;
+}
+.time select{
+    background-color: var(--surface);
+    padding: 5px;
+    font-size: var(--fs-l);
+}
+.fieldset{
+    height: 50px;
+    gap: 10px;
+    font-size: var(--fs-l);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.textarea{
+    resize: none;
+    width: 400px;
+    min-height: 50px;
+
+    border: 3px solid var(--border);
+    background-color: var(--surface);
+
+}
+.textarea:hover{
+    border: 3px solid var(--accent);
+}
+
+.bottom{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.textareaContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.textareaContainer label{
+    font-size: var(--fs-l);
+}
+
+.submit{
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    padding: 15px;
+    font-size: var(--fs-l);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.submit:hover{
+    border: 1px solid var(--accent);
 }
