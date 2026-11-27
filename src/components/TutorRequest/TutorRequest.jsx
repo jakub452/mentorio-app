@@ -6,7 +6,6 @@ import { Send } from 'lucide-react'
 const TutorRequest = ({ requestVisible, setRequestVisible, tutor }) => {
     const ref = useRef(null)
     useEffect(() => {
-        console.log(tutor)
         const handleClick = e => {
             if (ref.current && !ref.current.contains(e.target)) {
                 setRequestVisible(false)
@@ -21,11 +20,15 @@ const TutorRequest = ({ requestVisible, setRequestVisible, tutor }) => {
         document.addEventListener('mouseup', handleClick)
     }, [])
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+    }
+
     if (!requestVisible) return
     return (
         <div className={styles.request}>
             <div ref={ref} className={styles.requestCard}>
-                <form action="" method='post' className={styles.form}>
+                <form action="" method='post' className={styles.form} onSubmit={handleSubmit}>
                     <h2 className={styles.title}>Poproś o spotkanie</h2>
                     <p className={styles.subTitle}>Pola * są obowiązkowe</p>
                     <div className={styles.formInfo}>
@@ -71,9 +74,9 @@ const TutorRequest = ({ requestVisible, setRequestVisible, tutor }) => {
                         <div className={styles.bottom}>
                             <div className={styles.textareaContainer}>
                                 <label htmlFor="description">Z czym potrzebujesz pomocy? *</label>
-                            <textarea name="description" id="description" className={styles.textarea}></textarea>
+                                <textarea name="description" id="description" className={styles.textarea}></textarea>
                             </div>
-                            <button className={styles.submit} type="submit">  Wyślij <Send size={24}/></button>
+                            <button className={styles.submit} type="submit">  Wyślij <Send size={24} /></button>
                         </div>
                     </div>
                 </form>
